@@ -1,0 +1,31 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.card {
+  /* Same dimension ratio as a business card */
+  max-width: 700px;
+  height: 400px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+}
+
+.qualia-text{
+  color: #4DAF7C; /* Qualia brand color */
+  text-decoration: none;
+}
+
+.book-link {
+  color: #8E3B46;
+}
+
+a {
+  color: #0077b5; /* LinkedIn blue */
+  text-decoration: none;
+}
+
+.emoji {
+  font-size: 80%;
+}
