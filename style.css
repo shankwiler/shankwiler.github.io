@@ -1,3 +1,10 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f5f5f5;
@@ -6,7 +13,7 @@ body {
 .card {
   /* Same dimension ratio as a business card */
   max-width: 700px;
-  height: 400px;
+  max-height: 400px;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 10%;
@@ -28,4 +35,21 @@ a {
 
 .emoji {
   font-size: 80%;
+}
+
+.city {
+  position: absolute;
+  right: 0;
+  top: -10px; /* The SVG has a small gap at the top. Cover it up. */
+  overflow-x: hidden;
+}
+
+@media (max-width: 1200px) {
+  .city {
+    position: static;
+    width: 100%;
+  }
+  .city svg {
+    width: 100%;
+  }
 }
