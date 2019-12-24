@@ -17,6 +17,8 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 10%;
+  position: relative;
+  z-index: 1;
 }
 
 .qualia-text{
@@ -39,6 +41,7 @@ a {
 
 .city {
   position: absolute;
+  z-index: 0;
   right: 0;
   top: -10px; /* The SVG has a small gap at the top. Cover it up. */
   overflow-x: hidden;
