@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- Don't mind the markup and CSS mess, this is just for fun.-->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link href="../style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Boy Girl Paradox</title>
+  </head>
+  <body>
+    <div class="content">
+      <h1>
+        You call a family that has two children. A boy picks up. What is the
+        probability that the other is a boy?
+      </h1>
+      <h2>The Prompt</h2>
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <figure>
+          <img src="instagram-post.png" width="300" />
+          <figcaption>
+            <a
+              href="https://www.instagram.com/p/DCUGwCJPgyw/?utm_source=ig_web_copy_link"
+              >Instagram post</a
+            >
+          </figcaption>
+        </figure>
+      </div>
+      <h2>Lots of Disagreement</h2>
+      <div
+        style="
+          display: flex;
+          width: 100%;
+          align-content: space-between;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          align-items: center;
+        "
+      >
+        <div class="comment">
+          <figure>
+            <img src="reevaluate.png" width="300" />
+            <figcaption>reevaluate it</figcaption>
+          </figure>
+        </div>
+        <div class="comment">
+          <figure>
+            <img src="earnest-wrong-answer.png" width="300" />
+            <figcaption>reasonable but not quite right</figcaption>
+          </figure>
+        </div>
+        <div class="comment">
+          <figure>
+            <img src="back-office.png" width="300" />
+            <figcaption>back office</figcaption>
+          </figure>
+        </div>
+        <div class="comment">
+          <figure>
+            <img src="right-answer.png" width="300" />
+            <figcaption>nice</figcaption>
+          </figure>
+        </div>
+        <div class="comment">
+          <figure>
+            <img src="walked-it-back.png" width="300" />
+            <figcaption>didn't stick to his guns</figcaption>
+          </figure>
+        </div>
+      </div>
+      <p>
+        The most liked comment answers 1/2, but the user got worn down by others
+        until he recanted and agreed that the answer is 1/3. Many other comments
+        give lengthy explanations as to why the answer is 1/3.
+      </p>
+      <p>The actual answer is 1/2.</p>
+      <h2>Framing the Question</h2>
+      <p>
+        Let's flesh out this hypothetical, to make it easier to reason about.
+      </p>
+      <ul>
+        <li>
+          You're a salesman who sells bunkbeds, specifically bunkbeds that only
+          work for two boys.
+        </li>
+        <li>
+          You have a phonebook of leads, containing the phone number of all
+          households in the country that have exactly two kids.
+        </li>
+        <li>
+          When you make a call, you anxiously wait to find out whether you have
+          called the right kind of home. If the home has two girls or a girl and
+          a boy, you've wasted your time.
+        </li>
+        <li>
+          When you call, there's an equal probability that either child answers.
+        </li>
+        <li>
+          When a boy answers, you're happy. The household has at least one boy.
+        </li>
+        <li>
+          But how happy should you be? How likely is it, given that the kid
+          answering the phone is a boy, that the other kid is also a boy?
+        </li>
+      </ul>
+
+      <h2>Explanation</h2>
+      <p>
+        First, imagine there are 24 households with kids. The distribution of
+        genders in those households is as expected, with a quarter of them (6)
+        having two girls, half of them (12) having a girl and boy, and a quarter
+        of them (6) having two boys.
+      </p>
+      <table>
+        <tr>
+          <td class="gg">GG</td>
+          <td class="gg">GG</td>
+          <td class="gg">GG</td>
+          <td class="gg">GG</td>
+          <td class="gg">GG</td>
+          <td class="gg">GG</td>
+        </tr>
+        <tr>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+        </tr>
+        <tr>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+          <td class="bg">BG</td>
+        </tr>
+        <tr>
+          <td class="bb">BB</td>
+          <td class="bb">BB</td>
+          <td class="bb">BB</td>
+          <td class="bb">BB</td>
+          <td class="bb">BB</td>
+          <td class="bb">BB</td>
+        </tr>
+      </table>
+      <p>
+        An intuitive explanation is: look at all the Bs on the board. How many
+        have a brother? Half. A longer explanation is as follows.
+      </p>
+      <p>We want to solve P(called row 4 given that a boy picked up).</p>
+      <ul>
+        <li>P(called row 4) = 1/4</li>
+        <li>
+          P(a boy picked up) = 1/2, because:
+          <ul>
+            <li>
+              half the children are boys, each family is equally likely to have
+              been called, and each child in the family is equally likely to
+              pick up.
+            </li>
+          </ul>
+        </li>
+        <li>
+          To re-emphasize, P(a boy picked up) =
+          <ul>
+            <li>
+              P(a boy picks up from row 1) + P(a boy picks up from row 2) + P(a
+              boy picks up from row 3) + P(a boy picks up from row 4) =
+            </li>
+            <li>
+              ((1/4) * 0) + ((1/4) * (1/2)) + ((1/4) * (1/2)) + ((1/4) * 1) =
+            </li>
+            <li>1/2.</li>
+          </ul>
+        </li>
+        <li>
+          Therefore, P(called row 4 given that a boy picked up) =
+          <ul>
+            <li>
+              (P(a boy picked up given that row 4 was called) * P(row 4 was
+              called)) / P(a boy was called) =
+            </li>
+            <li>(1 * (1/4)) / (1/2) =</li>
+            <li>1/2.</li>
+            <li>
+              The link between the first bullet in this nested list and the
+              second is given by Baye's Theorem.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>The answer is 1/2.</p>
+
+      <h2>Why do so many people think the answer is 1/3?</h2>
+
+      <p>
+        The line of reasoning getting people to 1/3 is something like the
+        following:
+      </p>
+      <ul>
+        <li>
+          After calling and discovering that at least one boy is in the family,
+          row 1 is eliminated.
+        </li>
+        <li>Of the 18 remaining families, 6 have two boys.</li>
+        <li>
+          Therefore, you have a 6/18 = 1/3 chance of having called a home with
+          two boys.
+        </li>
+      </ul>
+
+      <p>
+        The flaw there is that you're ignoring the fact that for row 4, there's
+        a 100% chance a boy answers the phone, whereas for rows 2 and 3, there's
+        a 50% chance a boy answers the phone.
+      </p>
+
+      <p>Explicitly, P(called row 2 column 1 given that a boy answered) =</p>
+      <ul>
+        <li>
+          (P(a boy answered given row 2 column 1 was called) * P(row 2 column 1
+          was called)) / P(a boy was called) =
+        </li>
+        <li>((1/2) * (1/24)) / (1/2) =</li>
+        <li>1/24</li>
+      </ul>
+
+      <p>
+        Similar logic can be used to conclude P(called row 4 column 1 given that
+        a boy answered) = 1/12.
+      </p>
+
+      <p>
+        You know as soon as the boy answers that you're twice as likely to be
+        talking to row 4 column 1 as row 2 column 1. But there are twice as
+        many BG families as BB families, so that evens out, and you have an
+        equal probability of talking to a BG family as a BB family, once you
+        know a boy answered.
+      </p>
+
+      <h2>In what situation would the answer be 1/3?</h2>
+
+      <p>
+        If the question was phrased as "You are calling a family with 2 children
+        with at least one boy. What's the probability that the family has 2
+        boys?" then 1/3 would be the answer.
+      </p>
+
+      <p>
+        You could imagine that our salesman, instead of having a list of all
+        families with 2 kids, has a list of all families with 2 kids with at
+        least one boy. When he picks up the phone, it's ringing, and he's
+        anxiously waiting to hear the voice on the other line. He knows it's one
+        of the families from rows 2 to 4, and it's equally likely to be each of
+        them. Therefore, there's a 6 / 18 chance that it's row 4.
+      </p>
+
+      <p>
+        The key there is that there was no event, a boy picking up, which
+        indicated a weighting toward one family versus another. All families in
+        the set are equally likely from the salesman's perspective.
+      </p>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        I think it's pretty funny that people got so dug in on the 1/3 thing. It
+        feels like they were so primed for expecting a trick question that it
+        felt like it had to be the unexpected 1/3 rather than the obvious 1/2.
+      </p>
+
+      <p>
+        The subtleties and confusion around this question are captured by
+        Wikipedia's
+        <a href="https://en.wikipedia.org/wiki/Boy_or_girl_paradox"
+          >Boy or Girl Paradox</a
+        >. Looking at the "Second Question" section, you can see that our
+        question is equivalent to one of their examples: "From all families with
+        two children, one child is selected at random, and the sex of that child
+        is specified to be a boy. This would yield an answer of 1/2."
+      </p>
+    </div>
+  </body>
+</html>

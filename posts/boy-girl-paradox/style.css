@@ -1,0 +1,35 @@
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+td.gg {
+  background-color: lightpink;
+}
+
+td.bg {
+  background-color: plum;
+}
+
+td.bb {
+  background-color: lightblue;
+}
+
+.comment {
+  margin: 10px;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 3px;
+  color: slategray;
+}
+
+a {
+  text-decoration: none;
+}
