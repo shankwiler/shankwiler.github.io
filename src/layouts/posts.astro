@@ -1,0 +1,23 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/new-posts.css">
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav><a class="nav" href="/">home</a> &gt; <a class="nav" href="/posts">posts</a></nav>
+		<main>
+      <slot />
+    </main>
+	</body>
+</html>
